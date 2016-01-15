@@ -10,13 +10,11 @@
 
 			<div id="myQuiz" ng-controller="QuizController">
 				<h1>Pon a prueba tu conocimiento:<span>Misión</span></h1>
-				<div class="progress"> {{totalQuestions}}
-					<!-- <div class="answered correct"></div>
-					<div class="on"></div>
-					<div></div> -->
+				<div class="progress">
+					<div ng-repeat="myQuestion in myQuestions"></div>
 				</div>
 
-				<div class="intro">
+				<div class="intro {{ (activeQuestion > -1) ? 'inactive' : 'active' }}">
 					<h2>Bienvenido</h2>
 					<p>Haz click para aprender más sobre la compañía</p>
 					<p class="btn ">Iniciar</p>
