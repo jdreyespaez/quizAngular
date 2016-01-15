@@ -229,6 +229,6 @@ body { background-color: #fff; padding: 20px; }
 
 #myQuiz .active, #myQuiz .inactive { transition: left 1.5s ease-in-out; }
 
-#myQuiz .active { left: 40px }
+#myQuiz .active { left: 40px; }
 
-#myQuiz .intro.active, #myQuiz.inactive.answered { left: -1350px; } 
+#myQuiz .intro.inactive, #myQuiz.inactive.answered { left: -1350px; } 

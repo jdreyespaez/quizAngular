@@ -11,20 +11,34 @@
 			<div id="myQuiz" ng-controller="QuizController">
 				<h1>Pon a prueba tu conocimiento:<span>Misión</span></h1>
 				<div class="progress">
-					<div ng-repeat="myQuestion in myQuestions"></div>
-				</div>
+					<!-- Se hará un loop en el array myQuestions, donde se pondrá un elemento
+					cada vez que haya un elementoe. Aquí se ve un div element por cada
+					elemento que esté en el JSON, es decir, el número de preguntas.
 
+					Con el index igualido absolutamente con activeQuestion se activa en
+					CSS el selector .progress div.on-->
+					<div class="{{ ($index === activeQuestion) ? 'on' : 'off' }}" ng-repeat="myQuestion in myQuestions"></div>
+				</div>
+				<!-- Usando un inline conditional statement será posible definir una
+				condición, si ésta es verdadera entonces se cumplirá el primer
+				parámetro, de lo contrario pasará el de la derecha -->
 				<div class="intro {{ (activeQuestion > -1) ? 'inactive' : 'active' }}">
 					<h2>Bienvenido</h2>
-					<p>Haz click para aprender más sobre la compañía</p>
-					<p class="btn ">Iniciar</p>
+					<p>Haz click para aprender más sobre la compañía.</p>
+					<!-- Cuando se hace click en el botón, entonces la variable activeQuestion
+					cambia a un estado que es mayor a -1 y pasa a un estado inactive
+					lo cual implica que la propiedad left será igual a -1350px -->
+					<p class="btn" ng-click="activeQuestion = 0">Iniciar</p>
 				</div>
-				<div class="question answered">
-					<p class="txt">Aquí estará la pregunta</p>
-					<p class="ans">Respuesta 1</p>
-					<p class="ans correct">Respuesta 2</p>
-					<p class="ans">Respuesta 3</p>
-					<p class="ans selected">Respuesta 4</p>
+				<div class="question answered
+					{{ $index === activeQuestion ? 'active' : 'inactive' }}
+				" ng-repeat="myQuestion in myQuestions">
+					<!-- Del array myQuestion, se tomará el elemento question, donde está
+					la pregunta en el JSON -->
+					<p class="txt">{{ myQuestion.question }}</p>
+					<!-- Se apunta en el array myQuestions, dado el index, para que repita
+					todas las respuestas que estén allí -->
+					<p class="ans" ng-repeat="Answer in myQuestions[$index].answers">{{ Answer.text }}</p>
 					<div class="feedback">
 						<p>Eso es <strong>correcto</strong>.</p>
 						<p>Lo sentimos, es incorrecto.</p>

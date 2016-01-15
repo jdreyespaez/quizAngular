@@ -1,7 +1,7 @@
 [
   {
     "question"  : "La misión de nuestra compañía es: ______________.",
-    "answer"    : [
+    "answers"    : [
        { "id"   : 0, "text" : "Servicio" },
        { "id"   : 1, "text" : "Excelencia" },
        { "id"   : 2, "text" : "Rapidez" },
