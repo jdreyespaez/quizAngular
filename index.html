@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html ng-app="myQuiz">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Pon a prueba tu conocimiento: Misión</title>
+		<link rel="stylesheet" type="text/css" href="css/quiz.css">
+	</head>
+	<body>
+
+			<div id="myQuiz" ng-controller="QuizController">
+				<h1>Pon a prueba tu conocimiento:<span>Misión</span></h1>
+				<div class="progress"> {{totalQuestions}}
+					<!-- <div class="answered correct"></div>
+					<div class="on"></div>
+					<div></div> -->
+				</div>
+
+				<div class="intro">
+					<h2>Bienvenido</h2>
+					<p>Haz click para aprender más sobre la compañía</p>
+					<p class="btn ">Iniciar</p>
+				</div>
+				<div class="question answered">
+					<p class="txt">Aquí estará la pregunta</p>
+					<p class="ans">Respuesta 1</p>
+					<p class="ans correct">Respuesta 2</p>
+					<p class="ans">Respuesta 3</p>
+					<p class="ans selected">Respuesta 4</p>
+					<div class="feedback">
+						<p>Eso es <strong>correcto</strong>.</p>
+						<p>Lo sentimos, es incorrecto.</p>
+						<p>Retroalimentación adicional.</p>
+						<div class="btn">Continuar</div>
+					</div>
+				</div>
+				<div class="results">
+
+					<h3>Resultados</h3>
+					<p>Usted ha acertado X%, al responder correctamente Y del total de Z preguntas.</p>
+					<p>Reta a tus amigos compartiendo este quiz.</p>
+					<div class="share">
+						<a class="btn email" href="#">Email</a>
+						<a class="btn twitter" href="#">Twitter</a>
+
+					</div>
+				</div>
+			</div>
+
+			<script type="text/javascript" src="js/angular.min.js"></script>
+			<script type="text/javascript" src="js/quiz.js"></script>
+
+	</body>
+</html>

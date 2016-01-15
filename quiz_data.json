@@ -1,0 +1,53 @@
+[
+  {
+    "question"  : "La misión de nuestra compañía es: ______________.",
+    "answer"    : [
+       { "id"   : 0, "text" : "Servicio" },
+       { "id"   : 1, "text" : "Excelencia" },
+       { "id"   : 2, "text" : "Rapidez" },
+       { "id"   : 3, "text" : "Compromiso" }
+    ],
+    "correct"   : 1
+  },
+  {
+    "question" : "¿Cuál imagen representa nuestro logo?",
+    "answers"  : [
+      {"id"  : 0, "image" : "images/close_up_01.jpg" },
+      {"id"  : 1, "image" : "images/close_up_02.jpg" },
+      {"id"  : 2, "image" : "images/close_up_03.jpg" },
+      {"id"  : 3, "image" : "images/close_up_04.jpg" }
+    ],
+    "correct"  : 3
+  },
+  {
+    "question" : "¿En qué año fue fundad nuetra empresa?",
+    "answers"  : [
+      {"id"  : 0, "text" : "1992"},
+      {"id"  : 1, "text" : "1996"},
+      {"id"  : 2, "text" : "1999"},
+      {"id"  : 3, "text" : "2000"}
+    ],
+    "correct"  : 2
+  },
+  {
+    "question" : "¿Cuál es el apellido de nuestro fundador?",
+    "answers"  : [
+      {"id"  : 0, "text" : "Arévalo"},
+      {"id"  : 1, "text" : "Borrás"},
+      {"id"  : 2, "text" : "Caicedo"},
+      {"id"  : 3, "text" : "Díaz"},
+      {"id"  : 4, "text" : "Estevez"},
+      {"id"  : 5, "text" : "Fernández"}
+    ],
+    "correct"  : 4,
+    "feedback" : "Recuerda que la familia fundadora fue Estévez González."
+  },
+  {
+    "question" : "En 2013 alcanzamos nuestra certificación ISO9002",
+    "answers"  : [
+      {"id"  : 0, "text" : "Verdadero"},
+      {"id"  : 1, "text" : "Falso"}
+    ],
+    "correct"  : 0
+  }
+]
