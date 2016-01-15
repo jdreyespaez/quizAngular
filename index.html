@@ -38,7 +38,11 @@
 					<p class="txt">{{ myQuestion.question }}</p>
 					<!-- Se apunta en el array myQuestions, dado el index, para que repita
 					todas las respuestas que estén allí -->
-					<p class="ans" ng-repeat="Answer in myQuestions[$index].answers">{{ Answer.text }}</p>
+					<p class="ans"
+						ng-click="selectAnswer()"
+						ng-repeat="Answer in myQuestions[$index].answers">
+						{{ Answer.text }}
+					</p>
 					<div class="feedback">
 						<p>Eso es <strong>correcto</strong>.</p>
 						<p>Lo sentimos, es incorrecto.</p>
