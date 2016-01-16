@@ -17,7 +17,8 @@
 
 					Con el index igualido absolutamente con activeQuestion se activa en
 					CSS el selector .progress div.on-->
-					<div class="{{ ($index === activeQuestion) ? 'on' : 'off' }}" ng-repeat="myQuestion in myQuestions"></div>
+					<div class="{{ ($index === activeQuestion) ? 'on' : 'off' }}"
+							ng-repeat="myQuestion in myQuestions"></div>
 				</div>
 				<!-- Usando un inline conditional statement será posible definir una
 				condición, si ésta es verdadera entonces se cumplirá el primer
@@ -41,7 +42,15 @@
 					todas las respuestas que estén allí -->
 					<!-- Se tomarán como index lo que está por fuera, como padre y toma
 					como otro parámetro el índice actual -->
+					<!-- Si alguno de los elementos que se definen en ng-class son true
+					entonces estos tendrán algún efecto -->
 					<p class="ans"
+						ng-class="{
+							image:Answer.image,
+							selected:isSelected($parent.$index,$index),
+						 	correct:isCorrect($parent.$index,$index)
+						}"
+						ng-style="{ 'background-image':'url({{Answer.image}})' }"
 						ng-click="selectAnswer($parent.$index,$index)"
 						ng-repeat="Answer in myQuestions[$index].answers">
 						{{ Answer.text }}

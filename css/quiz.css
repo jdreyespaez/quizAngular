@@ -175,6 +175,13 @@ body { background-color: #fff; padding: 20px; }
   cursor: default;
 }
 
+#myQuiz .question .ans.image {
+  min-height: 60px;
+  padding: 0px;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
 /*Feedback*/
 #myQuiz .feedback {
   color: #efbe5e;
@@ -231,4 +238,4 @@ body { background-color: #fff; padding: 20px; }
 
 #myQuiz .active { left: 40px; }
 
-#myQuiz .intro.inactive, #myQuiz.inactive.answered { left: -1350px; } 
+#myQuiz .intro.inactive, #myQuiz.inactive.answered { left: -1350px; }
