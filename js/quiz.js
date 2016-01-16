@@ -49,6 +49,20 @@
 			return $scope.activeQuestion += 1;
 		}
 
+		$scope.createShareLinks = function(percentage){
+			var url = 'http://citizen.com';
+
+			var emailLink = '<a class="btn email" href="mailto:?subject=Intenta superar mi puntaje!&amp;body=Yo logré un '+percentage+'% en el quiz sobre MISIÓN de la empresa. Intenta ganarme en '+url+'">Envíalo por correo</a>';
+
+			var twitterLink = '<a class="btn twitter" target="_blank" href="http://twitter.com/share?text=Yo logre un '+percentage+'%. Intenta ganarme en at&amp;hashtags=Citizen&amp;url='+url+'">Compártelo en Twitter</a>';
+
+			var newMarkup = emailLink + twitterLink;
+
+			return $sce.trustAsHtml(newMarkup);
+
+		}
+
+
 	}]);
 
 })();

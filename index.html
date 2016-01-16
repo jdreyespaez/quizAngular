@@ -71,11 +71,7 @@
 					<h3>Resultados</h3>
 					<p>Usted ha acertado {{percentage}}%, al responder correctamente {{score}} del total de {{totalQuestions}} preguntas.</p>
 					<p>Reta a tus amigos compartiendo este quiz.</p>
-					<div class="share">
-						<a class="btn email" href="#">Email</a>
-						<a class="btn twitter" href="#">Twitter</a>
-
-					</div>
+					<div class="share" ng-bind-html="createShareLinks(percentage)"></div>
 				</div>
 			</div>
 
