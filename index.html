@@ -30,16 +30,19 @@
 					lo cual implica que la propiedad left será igual a -1350px -->
 					<p class="btn" ng-click="activeQuestion = 0">Iniciar</p>
 				</div>
-				<div class="question answered
+				<div class="question
 					{{ $index === activeQuestion ? 'active' : 'inactive' }}
-				" ng-repeat="myQuestion in myQuestions">
+					{{ myQuestion.questionState === 'answered' ? 'answered' : 'unanswered' }}
+					" ng-repeat="myQuestion in myQuestions">
 					<!-- Del array myQuestion, se tomará el elemento question, donde está
 					la pregunta en el JSON -->
 					<p class="txt">{{ myQuestion.question }}</p>
 					<!-- Se apunta en el array myQuestions, dado el index, para que repita
 					todas las respuestas que estén allí -->
+					<!-- Se tomarán como index lo que está por fuera, como padre y toma
+					como otro parámetro el índice actual -->
 					<p class="ans"
-						ng-click="selectAnswer()"
+						ng-click="selectAnswer($parent.$index,$index)"
 						ng-repeat="Answer in myQuestions[$index].answers">
 						{{ Answer.text }}
 					</p>
