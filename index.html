@@ -56,10 +56,10 @@
 						{{ Answer.text }}
 					</p>
 					<div class="feedback">
-						<p>Eso es <strong>correcto</strong>.</p>
-						<p>Lo sentimos, es incorrecto.</p>
-						<p>Retroalimentación adicional.</p>
-						<div class="btn">Continuar</div>
+						<p ng-show="myQuestion.correctness === 'correct'">Eso es <strong>correcto</strong>.</p>
+						<p ng-show="myQuestion.correctness === 'incorrect'">Lo sentimos, es incorrecto.</p>
+						<p>{{ myQuestion.feedback }}</p>
+						<div class="btn" ng-click="selectContinue()">Continuar</div>
 					</div>
 				</div>
 				<div class="results">
